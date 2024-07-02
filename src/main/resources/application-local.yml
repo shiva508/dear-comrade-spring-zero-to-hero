@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: dear-comrade-spring-zero-to-hero
+
+app:
+  profile: local
+  level: L1-local
+  emitPercent: 22-local
+  noArgs: No-local

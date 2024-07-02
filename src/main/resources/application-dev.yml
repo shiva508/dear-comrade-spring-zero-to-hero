@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: dear-comrade-spring-zero-to-hero
+#  config:
+#    activate:
+#      on-profile:
+#        - "gaia"
+app:
+  profile: dev
+  level: L1-dev
+  emitPercent: 22-dev
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - "dev"
+app:
+  profile: dev
+  level: L1-dev
+  emitPercent: 22-dev
+  author: shiva-dev
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - "local"
+app:
+  profile: dev
+  level: L1-dev
+  emitPercent: 22-dev
+  author: shiva-local
+---

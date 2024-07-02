@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: dear-comrade-spring-zero-to-hero
+
+app:
+  profile: dev
+  level: L1-dev
+  emitPercent: 22-dev
+  helper:
+    - "A:dev"
+    - "B:dev"
+    - "C:dev"
