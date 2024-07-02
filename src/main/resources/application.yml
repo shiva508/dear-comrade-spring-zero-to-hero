@@ -5,7 +5,8 @@ spring:
     group:
       dev:
         - "dear"
-#      local:
-#        - "helper-local"
+        - "helper-dev"
+      local:
+        - "helper-local"
 app:
   profile: default
