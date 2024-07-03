@@ -10,3 +10,6 @@ spring:
         - "helper-local"
 app:
   profile: default
+
+ott:
+  enabled: true
