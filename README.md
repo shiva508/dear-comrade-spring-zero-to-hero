@@ -67,6 +67,34 @@ app:
 }
 ```
 
-## If you want to 
+## Profile group
+
+### Using profile group we can activate other properties files on selecting specific profile
+
+```
+spring:
+  profiles:
+    group:
+      dev:
+        - "dear"
+        - "helper-dev"
+      local:
+        - "helper-local"
+```
+
+## If you want to activate any additional profile on selection specific profile we can use 
+```
+spring:
+  config:
+    activate:
+      on-profile:
+        - "local"
+app:
+  profile: dev
+  level: L1-dev
+  emitPercent: 22-dev
+  author: shiva-local
+```
 
 ## Order Of execution
+
