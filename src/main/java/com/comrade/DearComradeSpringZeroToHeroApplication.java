@@ -82,7 +82,7 @@ public class DearComradeSpringZeroToHeroApplication {
 
 	 */
 
-    static boolean transactional(Object o) {
+  /*  static boolean transactional(Object o) {
         var hasTransactional = new AtomicBoolean(false);
         var classes = new ArrayList<Class<?>>();
         classes.add(o.getClass());
@@ -96,18 +96,21 @@ public class DearComradeSpringZeroToHeroApplication {
         });
         return hasTransactional.get();
     }
-
-    @Bean
+*/
+  /*  @Bean
     public GkTopicService gkTopicService() {
         return new GkTopicService();
     }
+    */
 
-    @Bean
+   /* @Bean
     public DcTransactionalBeanPostProcessor dcTransactionalBeanPostProcessor() {
         return new DcTransactionalBeanPostProcessor();
     }
+    */
 
-    static class DcTransactionalBeanPostProcessor implements BeanPostProcessor {
+
+  /*  static class DcTransactionalBeanPostProcessor implements BeanPostProcessor {
 
         @Override
         public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
@@ -139,6 +142,7 @@ public class DearComradeSpringZeroToHeroApplication {
             return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
         }
     }
+   */
 
 	@Bean
 	public ApplicationRunner applicationRunner(TopicService gkTopicService) {
