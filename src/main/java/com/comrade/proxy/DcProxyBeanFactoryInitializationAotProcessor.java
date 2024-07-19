@@ -10,7 +10,7 @@ public class DcProxyBeanFactoryInitializationAotProcessor implements BeanFactory
         return (generationContext, beanFactoryInitializationCode) -> generationContext.getRuntimeHints()
                 .proxies()
                 .registerJdkProxy(
-                com.comrade.service.TopicService.class,
+                com.comrade.service.GkTopicService.class,
                 org.springframework.aop.SpringProxy.class,
                 org.springframework.aop.framework.Advised.class,
                 org.springframework.core.DecoratingProxy.class

@@ -1,6 +1,7 @@
 package com.comrade.proxy.config;
 
 
+import com.comrade.proxy.DcNonProxyTransactionalBeanPostProcessor;
 import com.comrade.proxy.DcProxyBeanFactoryInitializationAotProcessor;
 import com.comrade.proxy.DcTransactionalBeanPostProcessor;
 import com.comrade.service.GkTopicService;
@@ -20,8 +21,12 @@ public class ProxyBeanConfig {
         return new DcTransactionalBeanPostProcessor();
     }
 
-    @Bean
+    //@Bean
     public DcProxyBeanFactoryInitializationAotProcessor dcProxyBeanFactoryInitializationAotProcessor(){
         return new DcProxyBeanFactoryInitializationAotProcessor();
+    }
+    //@Bean
+    public DcNonProxyTransactionalBeanPostProcessor dcNonProxyTransactionalBeanPostProcessor(){
+        return new DcNonProxyTransactionalBeanPostProcessor();
     }
 }
