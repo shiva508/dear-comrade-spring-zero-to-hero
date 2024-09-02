@@ -1,3 +1,6 @@
+server:
+  port: 8090
+  shutdown: GRACEFUL
 spring:
   application:
     name: dear-comrade-spring-zero-to-hero
