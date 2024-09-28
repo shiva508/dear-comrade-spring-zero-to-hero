@@ -7,3 +7,5 @@
 https://piotrminkowski.com/2023/11/07/slim-docker-images-for-java/
 
 agent = where build going to run
+
+You have to install 2 plugins: Docker plugin and Docker Pipeline.
