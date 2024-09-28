@@ -14,7 +14,7 @@ pipeline {
 		stage('Build'){
 			steps {
 				//bat "mvn clean install -DskipTests"
-				sh 'mvn --version'
+				sh 'sudo  mvn --version'
 				echo "hi"
 			}
 		}
