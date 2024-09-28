@@ -31,5 +31,12 @@ pipeline {
 		always{
 			echo "Everything went well"
 		}
+		success{
+			echo "Okay......."
+		}
+		failure{
+			echo "Not Okay....."
+		}
 	}
+	
 }
