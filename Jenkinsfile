@@ -1,5 +1,6 @@
 pipeline {
-	agent any
+	//agent any
+	agent {docker{image 'maven:3.6.3'}}
 
 	environment {
 		mavenHome = tool 'dear-comrade-maven'
@@ -9,6 +10,7 @@ pipeline {
 		stage('Build'){
 			steps {
 				//bat "mvn clean install -DskipTests"
+				sh 'mvn --version'
 				echo "hi"
 			}
 		}
