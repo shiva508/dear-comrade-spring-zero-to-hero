@@ -7,14 +7,17 @@ pipeline {
 	// 			}
 	// 	  }
 
-	// environment {
-	// 	mavenHome = tool 'dear-comrade-maven'
-	// }
+	environment {
+		mavenHome 	= tool 'dear-comrade-maven'
+		dockerHome 	= tool 'dear-comrade-docker'
+		PATH = "$mavenHome/bin:$dockerHome/bin:$PATH"
+	}
 	stages {
 		stage('Build'){
 			steps {
 				//bat "mvn clean install -DskipTests"
-				//sh 'mvn --version'
+				sh 'mvn --version'
+				sh 'docker version'
 				echo "PATH : $PATH"
 				echo "BRANCH_NAME : $env.BRANCH_NAME"
 				echo "CHANGE_AUTHOR : $env.CHANGE_AUTHOR"
