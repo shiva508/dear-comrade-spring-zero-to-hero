@@ -1,11 +1,11 @@
 pipeline {
-//	agent any
-	agent { 
-			docker 
-				{ 
-					image 'maven:3.9.3-eclipse-temurin-17'
-				}
-		  }
+	agent any
+	// agent { 
+	// 		docker 
+	// 			{ 
+	// 				image 'maven:3.9.3-eclipse-temurin-17'
+	// 			}
+	// 	  }
 
 	// environment {
 	// 	mavenHome = tool 'dear-comrade-maven'
@@ -14,8 +14,12 @@ pipeline {
 		stage('Build'){
 			steps {
 				//bat "mvn clean install -DskipTests"
-				sh 'mvn --version'
-				echo "hi"
+				//sh 'mvn --version'
+				echo "PATH : $PATH"
+				echo "BRANCH_NAME : $env.BRANCH_NAME"
+				echo "CHANGE_AUTHOR : $env.CHANGE_AUTHOR"
+				echo "BUILD_ID : $env.BUILD_ID"
+				echo "JOB_NAME : $env.JOB_NAME"
 			}
 		}
 
