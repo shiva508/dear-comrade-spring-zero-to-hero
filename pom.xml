@@ -53,13 +53,13 @@
 
 	<build>
 		<plugins>
-		<plugin>
+		<!-- <plugin>
 			<artifactId>maven-compiler-plugin</artifactId>
 			<configuration>
 				<source>21</source>
 				<target>21</target>
 			</configuration>
-		</plugin>
+		</plugin> -->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
