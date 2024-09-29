@@ -13,7 +13,7 @@ pipeline {
 		PATH = "$mavenHome/bin:$dockerHome/bin:$PATH"
 	}
 	stages {
-		stage('Build'){
+		stage('Info'){
 			steps {
 				//bat "mvn clean install -DskipTests"
 				sh 'mvn --version'
@@ -25,11 +25,19 @@ pipeline {
 				echo "JOB_NAME : $env.JOB_NAME"
 			}
 		}
+		stage('Build'){
+			steps{
+				echo "Build : started"
+				sh "mvn clean compile"
+				echo "Build : completed"
+			}
+		}
 
 		stage('Test'){
 			steps{
-				//bat "mvn test"
-				echo "test"
+				echo "Test : started"
+				bat "mvn test"
+				echo "Test : completed"
 			}
 		}
 
