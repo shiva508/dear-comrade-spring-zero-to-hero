@@ -7,13 +7,13 @@ pipeline {
 				}
 		  }
 
-	environment {
+	//environment {
 		//mavenHome 	= tool 'dear-comrade-maven'
 		//dockerHome 	= tool 'dear-comrade-docker'
 		//javaHome	= tool 'dear-comrade-java-21'
 		//PATH = "$javaHome/bin:$mavenHome/bin:$dockerHome/bin:$PATH"
 
-	}
+	//}
 	stages {
 		stage('Info'){
 			steps {
