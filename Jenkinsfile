@@ -1,11 +1,11 @@
 pipeline {
-	agent any
-	// agent { 
-	// 		docker 
-	// 			{ 
-	// 				image 'maven:3.9.3-eclipse-temurin-17'
-	// 			}
-	// 	  }
+	//agent any
+	agent { 
+			docker 
+				{ 
+					image 'maven:eclipse-temurin:21-jdk'
+				}
+		  }
 
 	environment {
 		mavenHome 	= tool 'dear-comrade-maven'
