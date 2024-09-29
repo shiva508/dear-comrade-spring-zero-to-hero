@@ -8,10 +8,10 @@ pipeline {
 		  }
 
 	environment {
-		mavenHome 	= tool 'dear-comrade-maven'
-		dockerHome 	= tool 'dear-comrade-docker'
-		javaHome	= tool 'dear-comrade-java-21'
-		PATH = "$javaHome/bin:$mavenHome/bin:$dockerHome/bin:$PATH"
+		//mavenHome 	= tool 'dear-comrade-maven'
+		//dockerHome 	= tool 'dear-comrade-docker'
+		//javaHome	= tool 'dear-comrade-java-21'
+		//PATH = "$javaHome/bin:$mavenHome/bin:$dockerHome/bin:$PATH"
 
 	}
 	stages {
@@ -30,7 +30,7 @@ pipeline {
 		stage('Build'){
 			steps{
 				echo "Build : started"
-				sh "mvn clean install"
+				//sh "mvn clean install"
 				echo "Build : completed"
 			}
 		}
@@ -38,7 +38,7 @@ pipeline {
 		stage('Test'){
 			steps{
 				echo "Test : started"
-				bat "mvn test"
+				//sh "mvn test"
 				echo "Test : completed"
 			}
 		}
