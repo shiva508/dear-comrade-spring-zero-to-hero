@@ -55,7 +55,7 @@ jobs:
           name: Package
           path: target
       - name: Check for jars before cd
-        run: ls
+        run: ls ./target
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
