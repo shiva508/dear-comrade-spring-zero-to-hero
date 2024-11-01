@@ -39,7 +39,24 @@ jobs:
       with:
         name: Package
         path: staging
-#    - name: Download artifacts
+    - name: Update dependency graph
+      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+  push-image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+    steps:
+      - name: download jar
+        uses: actions/download-artifact@v4
+        with:
+          name: Package
+          path: staging
+          run: ls
+
+
+      #    - name: Download artifacts
 #      uses: actions/download-artifact@v4
 #      with:
 #        name: packaged-application
@@ -59,5 +76,4 @@ jobs:
 #        push: true
 #        tags: dasari508201/dear-comrade-spring-zero-to-hero:0.0.10
       # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+
