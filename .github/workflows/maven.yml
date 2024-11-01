@@ -54,8 +54,8 @@ jobs:
         with:
           name: Package
           path: staging
-      - name: chech
-        run: ls
+      - name: Check for jars
+        run: ls ./staging
 
       #    - name: Download artifacts
 #      uses: actions/download-artifact@v4
