@@ -53,7 +53,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Package
-          path: staging
+          path: .
       - name: Check for jars before cd
         run: ls ./staging
       - name: change directory
