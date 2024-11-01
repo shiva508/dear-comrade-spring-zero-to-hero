@@ -69,6 +69,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          file: ./Dockerfile
           push: true
           tags: dasari508201/dear-comrade-spring-zero-to-hero:0.0.10
 
