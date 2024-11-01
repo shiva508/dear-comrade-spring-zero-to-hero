@@ -55,10 +55,6 @@ jobs:
           name: Package
           path: .
       - name: Check for jars before cd
-        run: ls ./staging
-      - name: change directory
-        run: cd staging
-      - name: Check for jars after cd
         run: ls
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
