@@ -54,8 +54,21 @@ jobs:
         with:
           name: Package
           path: staging
-      - name: Check for jars
+      - name: Check for jars before cd
         run: ls ./staging
+      - name: change directory
+        run: cd staging
+      - name: Check for jars after cd
+        run: ls
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       #    - name: Download artifacts
 #      uses: actions/download-artifact@v4
