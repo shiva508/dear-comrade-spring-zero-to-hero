@@ -55,7 +55,7 @@ jobs:
           name: Package
           path: target/dear-comrade-spring-zero-to-hero-0.0.1-SNAPSHOT.jar
       - name: Check for jars before cd
-        run: ls ./staging
+        run: ls ./target
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
