@@ -2,11 +2,14 @@ package com.comrade.controller;
 
 import com.azure.storage.blob.BlobServiceClient;
 import com.comrade.config.builder.AzureServiceClientBuilder;
+import com.comrade.domine.AzureFileEntity;
 import com.comrade.service.BlobService;
 import com.comrade.util.DearComradeConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -49,14 +52,8 @@ public class AzureBlobController {
     }
 
     @PostMapping("/uploadMultipart")
-    public void uploadMultipartFile(@RequestParam("file") MultipartFile file){
-        try {
-            InputStream inputStream = file.getInputStream();
-            String originalFilename = file.getOriginalFilename();
-            String name = file.getName();
-            long size = file.getSize();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public ResponseEntity<AzureFileEntity> uploadMultipartFile(@RequestParam("file") MultipartFile file){
+        AzureFileEntity azureFileEntity = blobService.uploadMultipartFile(file);
+        return new ResponseEntity<>(azureFileEntity, HttpStatus.OK);
     }
 }
