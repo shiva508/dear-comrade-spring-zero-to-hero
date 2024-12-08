@@ -1,3 +1,32 @@
+server:
+  port: 8088
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 8MB
+      max-request-size: 10MB
   application:
     name: dear-comrade-spring-zero-to-hero
+  cloud:
+    azure:
+      storage:
+        account-name: devstoreaccount1
+        container-name: testcantainer
+        account-key: Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
+        endpoint: http://127.0.0.1:10000/devstoreaccount1
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dha
+    username: comrade
+    password: dear
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 5
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

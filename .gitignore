@@ -31,3 +31,26 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# dependencies
+/dc-files-app/node_modules
+/dc-files-app/.pnp
+/dc-files-app/.pnp.js
+
+# testing
+/dc-files-app/coverage
+
+# production
+/dc-files-app/build
+/dc-files-app/package-lock.json
+
+# misc
+/dc-files-app/.DS_Store
+/dc-files-app/.env.local
+/dc-files-app/.env.development.local
+/dc-files-app/.env.test.local
+/dc-files-app/.env.production.local
+
+/dc-files-app/npm-debug.log*
+/dc-files-app/yarn-debug.log*
+/dc-files-app/yarn-error.log*
