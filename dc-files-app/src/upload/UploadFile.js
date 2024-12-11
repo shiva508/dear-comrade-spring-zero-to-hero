@@ -29,7 +29,10 @@ const UploadFile = () => {
   };
   return (
     <div>
-      <input className="button" type="file" onChange={handleFileChange} />
+      <div className="button">
+        <input type="file" onChange={handleFileChange} />
+      </div>
+
       <button onClick={handleUploadClick}>Upload</button>
     </div>
   );
