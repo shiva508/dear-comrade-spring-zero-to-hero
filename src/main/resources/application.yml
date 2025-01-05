@@ -1,3 +1,17 @@
 spring:
   application:
     name: dear-comrade-spring-zero-to-hero
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+dc-ftp:
+  port: 2221
+  adminName: shiva
+  username: shiva
+  password: shiva
+  host: localhost
+  ttl-enabled: true
+  ttl: 40
+  path: /dc/files
