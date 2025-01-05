@@ -27,8 +27,8 @@ public class FtpFileOperationsService implements FileOperationsService{
         try {
             boolean openConnection = ftpFileOperationsFactory.openFtpConnection();
             log.info("upload::openConnection::{}",openConnection);
-            ftpFileOperationsFactory.saveFile(file.getInputStream(), file.getOriginalFilename());
-            log.info("upload::FTP server file upload status ");
+            boolean fileUploaded = ftpFileOperationsFactory.saveFile(file.getInputStream(), file.getOriginalFilename());
+            log.info("upload::FTP server file upload status ::{}",fileUploaded);
             fileResponse = FileResponse.builder().fileName(file.getOriginalFilename()).fileSize(file.getSize()).storePath("").uploaded(true).build();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -36,5 +36,10 @@ public class FtpFileOperationsService implements FileOperationsService{
 
         log.info("upload::completed");
         return fileResponse;
+    }
+
+    @Override
+    public FileResponse delete(String fileName) {
+        return null;
     }
 }

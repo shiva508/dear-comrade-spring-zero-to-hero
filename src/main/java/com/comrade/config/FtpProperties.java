@@ -25,5 +25,7 @@ public class FtpProperties {
 
     private String path;
 
+    private String rootPath;
+
 
 }

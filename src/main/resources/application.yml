@@ -15,3 +15,4 @@ dc-ftp:
   ttl-enabled: true
   ttl: 40
   path: /dc/files
+  root-path: C:/shiva/file-store

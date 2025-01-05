@@ -12,10 +12,13 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.util.Assert;
 
 import java.io.File;
 import java.io.IOException;
@@ -79,6 +82,13 @@ public class DearComradeFtpServerConfig {
     @Bean
     public DisposableBean stopDcFtpServer(FtpServer dcFtpServer){
         return dcFtpServer::stop;
+    }
+
+    @Bean("dcFtpUserManager")
+    public  UserManager dcFtpUserManager(@Value("${dc-ftp.root-path}") File root,
+                                    JdbcTemplate template){
+        Assert.isTrue(root.exists() || root.mkdirs(), "the root directory must exist.");
+        return new DcFtpUserManager(root, template);
     }
 
 }
