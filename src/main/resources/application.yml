@@ -1,3 +1,37 @@
 spring:
   application:
     name: dear-comrade-spring-zero-to-hero
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      rabbit:
+        bindings:
+          inbound-in-0:
+            consumer:
+              enableBatching: true
+              batchSize: 1
+              receiveTimeout: 200
+          outbound-out-0:
+            producer:
+              batchSize: 1
+              deliveryMode: PERSISTENT
+      bindings:
+        inbound-in-0:
+          destination: dear-comrade
+          group: sms
+          contentType: "application/json"
+          consumer:
+            batchMode: true
+        outbound-out-0:
+          destination: dear-comrade
+          group: sms
+          contentType: "application/json"
+          producer:
+            errorChannelEnabled: false
+
+producer:
+  name: outbound-out-0
