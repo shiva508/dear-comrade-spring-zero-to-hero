@@ -1,3 +1,6 @@
+server:
+  shutdown: GRACEFUL
+
 spring:
   application:
     name: dear-comrade-spring-zero-to-hero
