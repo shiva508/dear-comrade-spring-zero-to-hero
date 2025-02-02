@@ -1,7 +1,7 @@
-package com.comrade.rabbitmq.producer;
+package com.comrade.azure.producer;
 
-import com.comrade.rabbitmq.model.NotificationRequest;
-import com.comrade.rabbitmq.model.NotificationResponse;
+import com.comrade.azure.model.NotificationRequest;
+import com.comrade.azure.model.NotificationResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,10 +10,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-@RequiredArgsConstructor
 public class NotificationProducer {
 
     private final StreamBridge streamBridge;
+
+    public NotificationProducer(StreamBridge streamBridge) {
+        this.streamBridge = streamBridge;
+    }
 
     @Value("${producer.name}")
     String producerName;
@@ -24,9 +27,9 @@ public class NotificationProducer {
             log.info("sendingNotification::started::{}",notificationRequest);
             boolean messageStatus = streamBridge.send(producerName, notificationRequest);
             notificationResponse.setMessageStatus(messageStatus);
-            log.info("sendingNotification::completed::{}",notificationRequest);
+            //log.info("sendingNotification::completed::{}",notificationRequest);
         } catch (Exception exception){
-            log.error("sendingNotification::input::{}::error::",notificationRequest,exception);
+            //log.error("sendingNotification::input::{}::error::",notificationRequest,exception);
         }
         return notificationResponse;
     }
