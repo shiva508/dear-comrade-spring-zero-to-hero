@@ -23,8 +23,9 @@
 	</developers>
     <modules>
         <module>admin</module>
-		<module>client</module>
+		<module>news_service</module>
 		<module>discovery</module>
+		<module>current_affairs_service</module>
 	</modules>
     <scm>
 		<connection/>
