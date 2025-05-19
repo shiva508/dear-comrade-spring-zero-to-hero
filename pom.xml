@@ -22,10 +22,11 @@
 		<developer/>
 	</developers>
     <modules>
-        <module>admin</module>
+        <module>admin_service</module>
 		<module>news_service</module>
 		<module>discovery</module>
 		<module>current_affairs_service</module>
+		<module>job_portal_service</module>
 	</modules>
     <scm>
 		<connection/>

@@ -21,3 +21,9 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
+logging:
+  level:
+    com:
+      netflix:
+        eureka: off
+        discovery: off

@@ -1,0 +1,18 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: job_portal_service
+  boot:
+    admin:
+      client:
+        enabled: true
+        url: http://localhost:8084
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

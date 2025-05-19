@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.comrade</groupId>
-    <artifactId>admin</artifactId>
+    <artifactId>admin_service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>admin</name>
     <description>admin</description>
