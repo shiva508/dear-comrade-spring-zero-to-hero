@@ -24,3 +24,5 @@ springdoc:
 logging:
   level:
     io.awspring.cloud: debug
+video:
+  path: classpath:/videos/demo.mp4
