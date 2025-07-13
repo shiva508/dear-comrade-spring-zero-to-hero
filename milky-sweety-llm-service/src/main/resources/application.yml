@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: milky-sweety-llm-service
+milky-sweety-llm:
+  base-url: http://localhost:8089/api/chat
