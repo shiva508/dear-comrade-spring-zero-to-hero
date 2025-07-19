@@ -25,7 +25,8 @@
 		<module>milky-sweety-llm</module>
 		<module>milky-sweety-autoconfiguration</module>
 		<module>milky-sweety-llm-service</module>
-	</modules>
+        <module>milky-sweety-starter</module>
+    </modules>
 	<scm>
 		<connection/>
 		<developerConnection/>

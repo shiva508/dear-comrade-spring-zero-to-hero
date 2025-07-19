@@ -5,12 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.comrade</groupId>
-        <artifactId>dear-comrade-spring-zero-to-hero</artifactId>
+        <artifactId>milky-sweety-starter</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-
     <artifactId>milky-sweety-autoconfiguration</artifactId>
     <packaging>jar</packaging>
+    <name>milky-sweety-llm</name>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/shiva508/dear-comrade-spring-zero-to-hero</url>
+    </scm>
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
